@@ -1,0 +1,9 @@
+<% if session[:user_id] %>
+<%byebug%>
+  <h1><%= current_user.name %></h1>
+  <h2>Email: <%= current_user.email %></h2>
+  <h2>Facebook UID: <%= current_user.uid %></h2>
+  <img src="<%= current_user.image %>">
+<% else %>
+  <%= link_to('Log in with Github!', '/auth/github') %>
+<% end %>

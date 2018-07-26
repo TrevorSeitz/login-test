@@ -1,15 +1,5 @@
-<%# session[:user_id] = nil%>
-<% if @user%>
-<%# byebug %>
-  <h1><%= @user.name %></h1>
-  <h2>Email: <%= @user.email %></h2>
-  <h2>User ID: <%= @user.uid %></h2>
-  <img src="<%= @user.image %>">
-  <%= link_to('Log out', '/logout') %>
-<% else %>
-  <%= link_to('Log in with Github!', '/auth/github') %><br>
-  <p>
-  <strong>Don't use Github?</strong><br>
+<p>
+  <strong>Don't use these services?</strong>
   <%= link_to "Create an account", new_identity_path %> or login below.
 </p>
 
@@ -23,5 +13,4 @@
     <%= password_field_tag :password %>
   </div>
   <div class="actions"><%= submit_tag "Login" %></div>
-<% end %>
 <% end %>
